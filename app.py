@@ -66,7 +66,7 @@ st.sidebar.markdown("""
 
 # --- Upload Form ---
 if not st.session_state.processed:
-    st.subheader("📤 Add Your Expenses")
+    st.subheader("📤 Easily Submit Receipts and Bills for Expense Reimbursement")
     with st.form(key=f"doc_form_{st.session_state.form_key}", clear_on_submit=True):
         cols = st.columns([3, 2, 3])
         uploaded_file = cols[0].file_uploader(
@@ -83,7 +83,7 @@ if not st.session_state.processed:
             "Comments (Optional)",
             help="Add a comment related to this document."
         )
-        submitted = st.form_submit_button("➕ Add Another Expense")
+        submitted = st.form_submit_button("➕ Submit Expense")
         if submitted and uploaded_file:
             st.session_state.docs.append({
                 "file": uploaded_file,
